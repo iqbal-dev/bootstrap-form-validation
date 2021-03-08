@@ -16,7 +16,7 @@ const FormValidation = () => {
       event.preventDefault();
       event.stopPropagation();
     }
-    if (submitData.name && submitData.number) {
+    if (/^[A-Za-z ]+$/.test(submitData.name) && submitData.number) {
       setShow(true);
       setSubmitData({ name: "", number: "" });
       setValidated(true);
@@ -43,7 +43,7 @@ const FormValidation = () => {
                   required
                 />
                 <Form.Control.Feedback type="invalid">
-                  Please enter a username.
+                  Please enter valid username.
                 </Form.Control.Feedback>
               </InputGroup>
             </Form.Group>
